@@ -88,7 +88,6 @@ function Dashboard() {
     try {
       // JazzCash API Integration
       const merchantId = process.env.REACT_APP_JAZZCASH_MERCHANT_ID || "YOUR_MERCHANT_ID"; 
-      const hashKey = process.env.REACT_APP_JAZZCASH_HASH_KEY || "YOUR_HASH_KEY"; 
       const returnUrl = window.location.origin + "/payment-status";
       
       // Get current timestamp for pp_TxnDateTime
@@ -103,10 +102,7 @@ function Dashboard() {
       // Generate unique transaction ID
       const pp_TxnRefNo = 'T' + pp_TxnDateTime;
 
-      // Prepare data for hash generation - removed to avoid eslint warning
-      // const hashString = `${hashKey}&${amount}&${userData.email}&${merchantId}&${pp_TxnRefNo}&${pp_TxnDateTime}`;
-      // Note: In production, hash should be generated on the backend
-
+      // Prepare data for form submission
       const formData = {
         pp_Version: '1.1',
         pp_TxnType: 'MWALLET',

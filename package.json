@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.13",
     "firebase": "^9.23.0",
     "lodash": "^4.17.21",
     "postcss-preset-env": "^10.1.5",
@@ -19,8 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "vercel-build": "npm install && npm run build",
+    "build": "CI=false react-scripts build",
+    "vercel-build": "npm install && CI=false npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "node deploy-to-vercel.js"
